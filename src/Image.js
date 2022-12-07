@@ -4,7 +4,7 @@ function Image() {
 
     return(
         <div className="image">
-        <img/>
+        <img src=''/>
         <h2>Name</h2>
         <p>Alignment</p>
         <p>Catchphrase</p>
