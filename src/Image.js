@@ -1,17 +1,18 @@
 import React from 'react';
 
-function Image() {
-
+function Image({character}) {
+    const{name, alignment, catchphrase, personality, strength, weakness, background} = character
     return(
         <div className="image">
         <img src=''/>
-        <h2>Name</h2>
-        <p>Alignment</p>
-        <p>Catchphrase</p>
-        <p>Personality</p>
-        <p>Strength</p>
-        <p>Weakness</p>
-        <p>Background</p>
+        <h2>{name}</h2>
+        <p>{alignment}</p>
+        <p>{catchphrase}</p>
+        <p>{personality}</p>
+        <p>{strength}</p>
+        <p>{weakness}</p>
+        <p>{background}</p>
+        <button>Click to Delete Character</button>
     </div>
   
     )

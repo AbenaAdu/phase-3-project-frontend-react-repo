@@ -6,6 +6,7 @@ function Form(){
         <div className="form">
            <form>
            <input type='text' placeholder="name"></input>
+            <input type='text' placeholder="image"></input>
             <input type='text' placeholder="alignment"></input>
             <input type='text' placeholder="catchphrase"></input>
             <input type='text' placeholder="personality"></input>
