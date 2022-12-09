@@ -3,9 +3,13 @@ import './App.css';
 import Image from './Image'
 import Events from './Events'
 import Form from './Form'
+import CharacterDisplay from './CharacterDisplay'
 
 function App() {
     const [characters, setCharacters] = useState([])
+    const [featuredCharacter, setFeaturedCharacter] = useState([])
+    const [events, setEvents] = useState([])
+    const [newCharacter, setNewCharacter] = useState([])
 
     useEffect(()=> {
         fetch ("http://localhost:9292/characters")
@@ -13,15 +17,24 @@ function App() {
         .then(data => setCharacters(data))
         },[])
 
-        // const eachCharacter = characters.map(character => {
-        //     return <CharacterDisplay key={character.id} character={character}/>
-        // })
+        useEffect(()=>{
+            fetch("http://localhost:9292/events")
+            .then(res => res.json())
+            .then(data => setEvents(data))
+        },[])
+
+        function makeCharacter(info){
+            const newCharacterArray = [...characters, info]
+            setNewCharacter(newCharacterArray)
+        }
+
         return (
             <div>
-            <CharacterDisplay characters={characters}/>
-                <Image characters={characters}/>
-                <Events />
-                <Form />
+            <CharacterDisplay key={characters.id} characters={characters} setFeaturedCharacter={setFeaturedCharacter}/>
+                <Image featuredCharacter={featuredCharacter}/>
+                {events.map((event)=>{
+                    return <Events key={event.id} event={event}/>})}
+                <Form makeCharacter={makeCharacter}/>
             </div>
         )
 }

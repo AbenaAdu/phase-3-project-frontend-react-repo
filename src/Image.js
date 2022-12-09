@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-function Image({character}) {
-    const{name, alignment, catchphrase, personality, strength, weakness, background} = character
+function Image({featuredCharacter}) {
+    const{name, alignment, catchphrase, personality, strength, weakness, background} = featuredCharacter
+
+    
+
     return(
         <div className="image">
-        <img src=''/>
+        <img src={featuredCharacter.img_url}/>
         <h2>{name}</h2>
         <p>{alignment}</p>
         <p>{catchphrase}</p>
@@ -18,3 +21,6 @@ function Image({character}) {
     )
 }
 export default Image
+
+//Create functionality for delete button onClick
+//const [button, setButton] =useState()
