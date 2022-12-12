@@ -1,13 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import './App.css';
-import Image from './Image'
 import Events from './Events'
 import Form from './Form'
 import CharacterDisplay from './CharacterDisplay'
+import CartPage from './CartPage'
 
 function App() {
     const [characters, setCharacters] = useState([])
-    const [featuredCharacter, setFeaturedCharacter] = useState([])
     const [events, setEvents] = useState([])
     const [newCharacter, setNewCharacter] = useState([])
 
@@ -35,13 +34,28 @@ function App() {
             setCharacters(deletedCharacters)
           }
 
+          function updateCart(updatedCharacter) {
+            const updatedCharacters = characters.map(character=> {
+              if (character.id === updatedCharacter.id) {
+                return updatedCharacter
+              } else return character
+            })
+            setCharacters(updatedCharacters) 
+          }
+          const cartCharacters = characters.filter(character => {
+            if (character.cart === true) {
+              return character
+            } 
+          })
         return (
             <div>
-            <CharacterDisplay key={characters.id} characters={characters} setFeaturedCharacter={setFeaturedCharacter}/>
-                <Image deleteCharacter={deleteCharacter} featuredCharacter={featuredCharacter}/>
+            <CharacterDisplay key={characters.id} characters={characters} updateCart={updateCart} deleteCharacter={deleteCharacter}/>
                 {events.map((event)=>{
                     return <Events key={event.id} event={event}/>})}
                 <Form makeCharacter={makeCharacter}/>
+                <CartPage cartCharacters={cartCharacters}/>
+
+
             </div>
         )
 }
