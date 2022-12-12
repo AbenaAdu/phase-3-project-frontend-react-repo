@@ -28,10 +28,17 @@ function App() {
             setNewCharacter(newCharacterArray)
         }
 
+        function deleteCharacter(id) {
+            const deletedCharacters = characters.filter(character => {
+              return character.id !== id
+            })
+            setCharacters(deletedCharacters)
+          }
+
         return (
             <div>
             <CharacterDisplay key={characters.id} characters={characters} setFeaturedCharacter={setFeaturedCharacter}/>
-                <Image featuredCharacter={featuredCharacter}/>
+                <Image deleteCharacter={deleteCharacter} featuredCharacter={featuredCharacter}/>
                 {events.map((event)=>{
                     return <Events key={event.id} event={event}/>})}
                 <Form makeCharacter={makeCharacter}/>

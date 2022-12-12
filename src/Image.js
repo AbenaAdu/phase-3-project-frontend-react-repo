@@ -1,9 +1,17 @@
 import React, {useEffect, useState} from 'react';
 
-function Image({featuredCharacter}) {
+function Image({featuredCharacter, deleteCharacter}) {
     const{name, alignment, catchphrase, personality, strength, weakness, background} = featuredCharacter
 
-    
+    function handleDelete() {
+        fetch(`http://localhost:9292/characters/${id}`, {
+            method: "DELETE",
+          })
+          .then(response => response.json())
+          .then(() => {
+            deleteCharacter(id)
+          })
+    }
 
     return(
         <div className="image">
@@ -15,7 +23,7 @@ function Image({featuredCharacter}) {
         <p>{strength}</p>
         <p>{weakness}</p>
         <p>{background}</p>
-        <button>Click to Delete Character</button>
+        <button onClick={handleDelete}>Click to Delete Character</button>
     </div>
   
     )
