@@ -4,9 +4,9 @@ function Events({event}){
 
     return(
         <div className="events">
-            <p>{event.name}</p>
-            <p>{event.date}</p>
-            <p>{event.type_of_event}</p>  
+            <p>Event Name: {event.name}</p>
+            <p>Event Date: {event.date}</p>
+            <p>Event Type: {event.type_of_event}</p>  
         </div>
     )
 
