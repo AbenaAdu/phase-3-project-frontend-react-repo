@@ -6,7 +6,7 @@ function CharacterDisplay({characters, setFeaturedCharacter}) {
 
 
         return (
-            <div >
+            <div class="label" >
             <label for="character names">Choose a character:</label>
             <select name="character" id="character">
             {characters.map((character)=>{

@@ -6,6 +6,7 @@ function Image({featuredCharacter}) {
     
 
     return(
+    <div>
         <div className="image">
         <img src={featuredCharacter.img_url}/>
         <h2>{name}</h2>
@@ -15,9 +16,11 @@ function Image({featuredCharacter}) {
         <p>{strength}</p>
         <p>{weakness}</p>
         <p>{background}</p>
-        <button>Click to Delete Character</button>
-    </div>
-  
+        </div>
+        <div>
+        <button class="button">Click to Delete Character</button>
+        </div>
+     </div>
     )
 }
 export default Image

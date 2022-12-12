@@ -43,7 +43,9 @@ function Form({makeCharacter}){
             <input type='text' placeholder="strength"value={strength} onChange = {(e)=> setStrength(e.target.value)}/>
             <input type='text' placeholder="weakness"value={weakness} onChange = {(e)=> setWeakness(e.target.value)}/>
             <input type='text' placeholder="background"value={background} onChange = {(e)=> setBackground(e.target.value)}/>
-            <button type='submit'>Submit</button>
+            <div>
+            <button type='submit' class="submit">Submit</button>
+            </div>
            </form>
     )
 }

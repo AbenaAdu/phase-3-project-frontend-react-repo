@@ -29,12 +29,17 @@ function App() {
         }
 
         return (
-            <div>
+            <div class="main">
+                <div class="header"> 
+                </div>
             <CharacterDisplay key={characters.id} characters={characters} setFeaturedCharacter={setFeaturedCharacter}/>
                 <Image featuredCharacter={featuredCharacter}/>
                 {events.map((event)=>{
                     return <Events key={event.id} event={event}/>})}
-                <Form makeCharacter={makeCharacter}/>
+                    <div class="form"><Form makeCharacter={makeCharacter}/></div>
+
+
+
             </div>
         )
 }
