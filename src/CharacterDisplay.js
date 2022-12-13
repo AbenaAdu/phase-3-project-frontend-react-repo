@@ -14,7 +14,7 @@ function CharacterDisplay({characters, deleteCharacter, updateCart}) {
 
         return (
             <div class="label" >
-            <label for="character names">Choose a character:</label>
+            <label form="character names">Choose a character:</label>
             <select onChange={showCharacter}>
             {characters.map((character)=>{
                 return   <option value={character.name}>{character.name}</option>  

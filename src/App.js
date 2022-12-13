@@ -48,10 +48,10 @@ function App() {
             } 
           })
         return (
-            <div class="main">
-                <div class="header"> 
+            <div className="main">
+                <div className="header"> 
                 </div>
-            <CharacterDisplay key={characters.id} characters={characters} setFeaturedCharacter={setFeaturedCharacter}updateCart={updateCart} deleteCharacter={deleteCharacter}/>
+            <CharacterDisplay key={characters.id} characters={characters} updateCart={updateCart} deleteCharacter={deleteCharacter}/>
                 {events.map((event)=>{
                     return <Events key={event.id} event={event}/>})}
                     <div class="form"><Form makeCharacter={makeCharacter}/>

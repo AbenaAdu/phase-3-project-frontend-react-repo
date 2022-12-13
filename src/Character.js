@@ -28,7 +28,7 @@ function Character ({characterDisplayed, deleteCharacter, updateCart}){
     return (
         <div>
         <img src={characterDisplayed.img_url}/>
-        <h2>Name:{name}</h2>
+        <h2>{name}</h2>
         <p>{alignment}</p>
         <p>{catchphrase}</p>
         <p>{personality}</p>
@@ -36,7 +36,7 @@ function Character ({characterDisplayed, deleteCharacter, updateCart}){
         <p>{weakness}</p>
         <p>{background}</p>
         <button onClick={handleCartClick} id="add-to-cart">
-        Purchase Physical Copy {cart ? "Get Physical Copy" : "Remove From Cart"} 
+        Purchase Physical Copy 
       </button>
         <button onClick={handleDelete}>Click to Delete Character</button>
     </div>

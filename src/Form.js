@@ -13,7 +13,7 @@ function Form({makeCharacter}){
 
     function handleForm(e){
         e.preventDefault()
-        fetch ("http://localhost:9292/characters", {
+        fetch ("http://localhost:9292/characters/post", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
